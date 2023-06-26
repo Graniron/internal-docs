@@ -1,0 +1,11 @@
+:root {
+  --sl-nav-pad-y: 1rem;
+}
+
+:root[data-theme='light'] {
+  --sl-color-text-accent: #2450b2;
+}
+
+.card {
+  border-radius: 0.5rem;
+}
