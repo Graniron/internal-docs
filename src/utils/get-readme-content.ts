@@ -6,8 +6,13 @@ const TOKEN = import.meta.env.GITLAB_TOKEN;
 const DEFAULT_BRANCH = 'main';
 
 export const getReadmeContent = async (projectId: string, branch = DEFAULT_BRANCH): Promise<string> => {
-  const response = await fetch(`${BASE_URL}/${projectId}/repository/files/README.md?access_token=${TOKEN}&ref=${branch}`);
-  const responseDate = await response.json();
-  const parsedContent =  base64ToString(responseDate.content);
-  return marked.parse(parsedContent);
+  try {
+    const response = await fetch(`${BASE_URL}/${projectId}/repository/files/README.md?access_token=${TOKEN}&ref=${branch}`);
+    const responseDate = await response.json();
+    const parsedContent =  base64ToString(responseDate.content);
+    return marked.parse(parsedContent);
+  } catch (error) {
+    console.error(`Error during fetching Project: ${projectId}`, error);
+    return 'Content Fetching Error';
+  }
 }
