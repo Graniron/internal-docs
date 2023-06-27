@@ -29,9 +29,7 @@ export default defineConfig({
         },
         {
           label: 'Resources',
-          items: [
-            { label: 'Links', link: '/resources' },
-          ],
+          autogenerate: { directory: 'resources' },
         },
       ],
     }),
