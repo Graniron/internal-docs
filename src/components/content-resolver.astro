@@ -9,4 +9,4 @@ const { projectId, branch } = Astro.props;
 const content = getReadmeContent(projectId, branch)
 ---
 
-<article set:html={content} />
+<Fragment set:html={content} />

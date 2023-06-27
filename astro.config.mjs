@@ -6,6 +6,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Didomi',
+      tableOfContents: false,
       logo: {
         src: '/src/assets/logo.svg',
         replacesTitle: true,
