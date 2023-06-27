@@ -1,0 +1,12 @@
+---
+// Imports
+import { getReadmeContent } from '../utils/get-readme-content';
+
+// Props
+const { projectId, branch } = Astro.props;
+
+// Execute
+const content = getReadmeContent(projectId, branch)
+---
+
+<article set:html={content} />
