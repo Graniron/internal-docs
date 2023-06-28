@@ -17,6 +17,8 @@ export default defineConfig({
           label: 'Getting Started',
           items: [
             { label: 'Introduction', link: '/getting-started' },
+            { label: 'Notion Hackathon 2023', link: '/notion' },
+            { label: 'Notion JS', link: '/js-notion-page' },
           ]
         },
         {

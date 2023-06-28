@@ -1,0 +1,12 @@
+---
+// Imports
+import { getNotionContent } from '../utils/get-notion-content';
+
+// Props
+const { pageId } = Astro.props;
+
+// Execute
+const content = getNotionContent(pageId);
+---
+
+<Fragment set:html={content} />
